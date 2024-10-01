@@ -5,6 +5,8 @@ public class Ejercicio6 {
 		double res = switch(modo) {
 			case 1 -> num1+num2;
 			case 2 -> num1-num2;
+			case 3 -> num1*num2;
+			case 4 -> num1/num2;
 		default -> throw new IllegalArgumentException("Unexpected value: " + modo); 
 		};
 		

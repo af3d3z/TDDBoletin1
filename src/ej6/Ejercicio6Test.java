@@ -18,15 +18,23 @@ class Ejercicio6Test {
 		assertEquals(expectedRes, res);
 	}
 	
-	public Stream<Arguments> numeritos() {
+	public static Stream<Arguments> numeritos() {
 		return Stream.of(
-				Arguments.of(2, 3, 1, 5)
+				Arguments.of(2, 3, 1, 5),
+				Arguments.of(4, 2, 2, 2),
+				Arguments.of(5, 5, 3, 25),
+				Arguments.of(10, 5, 4, 2)
 				);
 	}
 
 	@Test
 	void testCalculadoraIllegalArgumentException() {
 		assertThrows(IllegalArgumentException.class, () ->  Ejercicio6.calculadora(2, 4, 0));
+	}
+	
+	@Test
+	void testCalculadoraArithmeticException() {
+		assertThrows(ArithmeticException.class, () -> Ejercicio6.calculadora(3, 0, 4));
 	}
 
 }
